@@ -841,17 +841,19 @@ function self_weight_solve_single(bvp::BVProblem, trunk::TrunkFast{T, N},
     elseif solver == 3
         sol = solve(
             bvp_new,
-            BVPM2(),
+            Shooting(AutoVern7(Rodas4())), #BVPM2(),
             dt = trunk.trunk.L / 100.0,
             abstol = abstol,
             reltol = reltol
         )
     elseif solver == 4
-        sol = solve(bvp_new, BVPSOL(), abstol = abstol, reltol = reltol)
+        sol = solve(bvp_new, 
+        Shooting(AutoVern7(Rodas4())), #BVPSOL(), 
+        abstol = abstol, reltol = reltol)
     elseif solver == 5
         sol = solve(
             bvp_new,
-            COLNEW(),
+            Shooting(AutoVern7(Rodas4())),#COLNEW(),
             dt = trunk.trunk.L / 100.0,
             abstol = abstol,
             reltol = reltol

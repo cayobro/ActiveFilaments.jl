@@ -141,7 +141,7 @@ function ActiveFilaments.plotReachabilityCloud(sols, activationsGamma::Matrix{Fl
         gravity = false, full_solution = false, flipped = false, showBox = true,
         hideAll = false,
         azimuth = 1.275 * pi, elevation = pi / 8,
-        resolution = (3840, 2160),
+        resolution = (1000,800),#(3840, 2160),
         markersize = 2,
         perspectiveness = 0.0,
         transparency = false,

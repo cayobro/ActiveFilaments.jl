@@ -41,7 +41,8 @@ using ForwardDiff
 using OptimizationNLopt
 using OptimizationBBO
 using OptimizationNOMAD
-using ODEInterfaceDiffEq
+#using ODEInterfaceDiffEq # this is not working on apple silicon
+using BoundaryValueDiffEq # native to Julia, should work on apple silicon
 
 import Base.copy
 #endregion ========================
